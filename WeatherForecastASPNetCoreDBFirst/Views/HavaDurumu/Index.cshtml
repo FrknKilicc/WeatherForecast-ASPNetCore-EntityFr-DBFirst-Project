@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WeatherForecastASPNetCoreDBFirst.Models.HavaDurumu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Yeni Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SehirId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DereceCelcius)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NemOrani)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RuzgarHizi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SehirId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DereceCelcius)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NemOrani)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RuzgarHizi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DurumId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.DurumId">Detay</a> |
+                <a asp-action="Delete" asp-route-id="@item.DurumId">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

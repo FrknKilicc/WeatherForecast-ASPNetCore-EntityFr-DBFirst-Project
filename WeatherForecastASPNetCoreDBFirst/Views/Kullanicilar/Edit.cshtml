@@ -1,0 +1,39 @@
+﻿@model WeatherForecastASPNetCoreDBFirst.Models.Kullanicilar
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Kullanicilar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KullaniciId" />
+            <div class="form-group">
+                <label asp-for="KullaniciAdi" class="control-label"></label>
+                <input asp-for="KullaniciAdi" class="form-control" />
+                <span asp-validation-for="KullaniciAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SifreHash" class="control-label"></label>
+                <input asp-for="SifreHash" class="form-control" />
+                <span asp-validation-for="SifreHash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
